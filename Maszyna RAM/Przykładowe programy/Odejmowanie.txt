@@ -1,0 +1,12 @@
+10
+5 24 52 0
+
+:pocz read 1
+load 1
+jzero end
+sub =1
+write 0
+jump pocz
+:end stop
+// Program dla każdej liczby na wejściu zwraca
+// liczbę o 10 mniejszą, dopóki nie odczyta 0

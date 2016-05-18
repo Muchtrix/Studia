@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Saper</title>
+  <link rel="icon" type="image/png" href="assets/bomb.png" sizes="32x32" />
+  <link rel="stylesheet" type="text/css" href="assets/style.css"/>
+  <script src="assets/Minesweeper.js"></script>
+</head>
+
+<body onload="Init()">
+  <div id="game">
+    <img id="header" alt="header" src="assets/header.png" />
+    <div id="playArea"></div>
+    <div id="info">
+      <div id="message"></div>
+      <div id="timeMsg">Czas: <span id="time">0</span><span id="sec">s</span></div>
+      <div id="mines"></div>
+      <div>Flagi: <input type="checkbox" id="flags"/></div>
+      <div id="thanks">Kod: Wiktor Adamski | Grafika: <a href="http://Kenney.nl">Kenney.nl</a></div>
+    </div>
+    <img id="restart" onclick="Init()" src="assets/restart.png" alt="Nowa Gra"/>
+  </div>
+</body>
+
+</html>
