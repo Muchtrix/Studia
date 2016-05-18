@@ -23,6 +23,7 @@ function Init() {
       var ile = i*columns + j;
       kafelek.id = ile;
       kafelek.onclick = function() {klikniecie(this)};
+      kafelek.oncontextmenu = function(){flaga(this); return false};
       pa.appendChild(kafelek);
       odkryte.push(false);
       oflagowane.push(false);
@@ -69,28 +70,32 @@ function sasiedzi(cord) {
   return wyn;
 }
 
+// Obsługa flagowania
+function flaga(v){
+  if (!gameGoing) return;
+
+  var cord = parseInt(v.id);
+
+  // Tryb flagowania
+  if (oflagowane[cord]) {
+    v.src = "assets/empty.png";
+    flags--;
+  }else{
+    v.src = "assets/flag.png";
+    flags++;
+  }
+  oflagowane[cord] = !oflagowane[cord];
+  var ile = flags <= mines ? mines - flags : 0;
+  document.getElementById("mines").innerHTML = "Miny: " + ile;
+  return;
+}
+
 // Obsługa klikniecia w pole
 function klikniecie(v) {
   // Sprawdzenie czy trwa rozgrywka
   if (!gameGoing) return;
 
   var cord = parseInt(v.id);
-
-  // Tryb flagowania
-  if (document.getElementById("flags").checked && !odkryte[cord]){
-    if (oflagowane[cord]) {
-      v.src = "assets/empty.png";
-      flags--;
-    }else{
-      v.src = "assets/flag.png";
-      flags++;
-    }
-    oflagowane[cord] = !oflagowane[cord];
-    var ile = flags <= mines ? mines - flags : 0;
-    document.getElementById("mines").innerHTML = "Miny: " + ile;
-    return;
-  }
-
 
   if (!odkryte[cord] && !oflagowane[cord]){
     odkryte[cord] = true;
