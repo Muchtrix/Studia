@@ -6,6 +6,9 @@ function Init() {
    rows = 16;
    mines = 40;
    flags = 0;
+   gameStart = true;
+   timeInt = null;
+   startTime = new Date();
    gameGoing = true;
    finalShowing = false;
    freeSpaces = rows*columns - mines;
@@ -40,10 +43,6 @@ function Init() {
     if (miny.indexOf(cord) < 0) miny.push(cord);
     else i--;
   }
-
-  // Inicjalizacja zegara
-  startTime = new Date();
-  timeInt = setInterval(function(){timeUpdate()}, 500);
 }
 
 // Aktualizacja zegara
@@ -72,6 +71,7 @@ function sasiedzi(cord) {
 
 // Obsługa flagowania
 function flaga(v){
+  
   if (!gameGoing) return;
 
   var cord = parseInt(v.id);
@@ -92,6 +92,13 @@ function flaga(v){
 
 // Obsługa klikniecia w pole
 function klikniecie(v) {
+  
+    if(gameStart){
+    startTime = new Date();
+    timeInt = setInterval(function(){timeUpdate()}, 500);
+    gameStart = false;
+  }
+  
   // Sprawdzenie czy trwa rozgrywka
   if (!gameGoing) return;
 
