@@ -1,5 +1,6 @@
 function Init() {
   // Parametry gry i referencja do planszy
+   document.getElementById("time").innerHTML = 0;
    var pa = document.getElementById("playArea");
    pa.innerHTML = "";
    columns = 16;
