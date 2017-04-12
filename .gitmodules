@@ -1,3 +1,15 @@
 [submodule "Wbudowane"]
 	path = Wbudowane
 	url = https://github.com/Muchtrix/Wbudowane.git
+[submodule "Funkcyjne"]
+	path = Funkcyjne
+	url = https://github.com/Muchtrix/Funkcyjne.git
+[submodule "ASK"]
+	path = ASK
+	url = https://github.com/Muchtrix/ASK.git
+[submodule "Kurs-.NET"]
+	path = Kurs-.NET
+	url = https://github.com/Muchtrix/Kurs-.NET.git
+[submodule "Kurs-Lua"]
+	path = Kurs-Lua
+	url = https://github.com/Muchtrix/Kurs-Lua.git
