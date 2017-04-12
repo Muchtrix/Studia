@@ -1,0 +1,3 @@
+[submodule "Wbudowane"]
+	path = Wbudowane
+	url = https://github.com/Muchtrix/Wbudowane.git
