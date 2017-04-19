@@ -27,5 +27,3 @@ Wybrane projekty realizowane w ramach studiów na Uniwersytecie Wrocławskim
 ## Lato 2017
 
 * Kurs Lua - zadania z kursu Lua (Lua)
----
-Inne programy ze studiów są dostępne w moich repozytoriach.
